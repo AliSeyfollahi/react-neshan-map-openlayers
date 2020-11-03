@@ -29,7 +29,7 @@ const NeshanMap = (props) => {
       },
     });
     if (onInit) onInit(map);
-  });
+  }, []);
   return <div ref={mapEl} style={{ ...defaultStyle, ...style }} />;
 };
 
