@@ -5,6 +5,11 @@ const DEFAULT_URL_STYLE = `${BASE_URL}/sdk/openlayers/5.3.0/ol.css`;
 export default (props) => {
   const createScript = () => {
     const { onError, onLoad } = props;
+    
+    if (window.ol) {
+      if (onLoad) onLoad();		
+      return;
+    }
 
     const style = document.createElement("link");
     style.href = DEFAULT_URL_STYLE;
